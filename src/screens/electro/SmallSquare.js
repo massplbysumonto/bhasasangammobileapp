@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './SmallSquare.module.css';
 import imgUrlimg from './u1.jpg'
 import { View, Text, Image, ImageBackground } from "react-native";
 import { TouchableWithoutFeedback } from 'react-native';
+
 function SmallSquare(props) {
-    const [imgUrl, setImgUrl] = React.useState( (props.imgUrl===undefined || props.imgUrl.qimg===undefined)?imgUrlimg:'https://backend.bhashasangam.in/getImage/?imgName='+props.imgUrl.qimg)
+    const [imgUrl, setImgUrl] = React.useState( (props.imgUrl===undefined || props.imgUrl.qimg===undefined)?imgUrlimg:'https://backend.bhashasangam.in/getImage/?imgName='+props.imgUrl.qimg);
+    const opacity={}
     const tileStyle = {
         width: '100%',
         height: '100%',
@@ -14,7 +16,7 @@ function SmallSquare(props) {
       };
     return (
         <TouchableWithoutFeedback onPress={(e)=>{props.clickHandler("qindex",props.value)}}>
-            <Image  source={{uri:imgUrl}} resizeMode='cover' style={{width:70,height:70,margin:5, borderColor: 'rgba(0,0,0,0.5)', borderWidth: 1}}></Image>
+            <Image  source={{uri:imgUrl}} resizeMode='cover' style={{width:70,height:70,margin:5, borderColor: 'rgba(0,0,0,0.5)', borderWidth: 1, opacity: props.value==props.press || props.correctIndex.includes(parseInt(props.value))? 0.5: 1}}></Image>
         </TouchableWithoutFeedback>
     )
 }

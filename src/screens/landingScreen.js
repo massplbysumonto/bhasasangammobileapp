@@ -100,7 +100,7 @@ function LandingScreen(){
              flexDirection:'row', 
              justifyContent: 'space-between',
               padding: 5,
-               backgroundColor: '#FFFFCC'
+               backgroundColor: 'rgba(148,94,38,0.8)'
         },
         secondSection:{
             backgroundColor:'#F8E7D3',
@@ -120,7 +120,7 @@ function LandingScreen(){
             // flex:0,
             padding: 5,
             flexDirection:'row',
-            backgroundColor: '#FFFFCC',
+            backgroundColor: 'rgba(148,94,38,0.8)',
 
             //  backgroundColor: 'orange'
 
@@ -151,7 +151,7 @@ function LandingScreen(){
             fontSize:15,
             alignItems:'center',
             textTransform:'uppercase',
-            color: '#945E26',
+            color: 'rgba(148,94,38,0.8)',
             fontWeight: '700'
             
             // backgroundColor: 'green' 
@@ -239,7 +239,7 @@ function LandingScreen(){
              <TouchableOpacity onPress={()=>playVideo()}>
                 <View style={{padding: 5}}>
                 <View style={Styles.secondSectionFirst}>
-                <Text style={{fontSize: 20, lineHeight: 90, textAlign: 'center', color:'#945E26'}}>Domestic Animal & Their Uses</Text>
+                <Text style={{fontSize: 20, lineHeight: 90, textAlign: 'center', color:'rgba(148,94,38,0.8)'}}>Domestic Animal & Their Uses</Text>
             </View>
                     <VideoComponent paused={paused} />
                 </View>

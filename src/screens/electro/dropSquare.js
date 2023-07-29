@@ -14,7 +14,7 @@ function SmallSquare(props) {
       };
     return (
         <TouchableWithoutFeedback onPress={(e)=>{props.clickHandler("aindex",props.value)}}>
-        <Image  source={{uri:imgUrl}} resizeMode='cover' style={{width:70,height:70,margin:5, borderColor: 'rgba(0,0,0,0.5)', borderWidth: 1}}></Image>
+        <Image  source={{uri:imgUrl}} resizeMode='cover' style={{width:70,height:70,margin:5, borderColor: 'rgba(0,0,0,0.5)', borderWidth: 1,opacity: props.press==props.value || props.correctIndex.includes(parseInt(props.value))? 0.5: 1}}></Image>
       </TouchableWithoutFeedback>
     )
 }

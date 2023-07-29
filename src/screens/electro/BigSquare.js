@@ -34,6 +34,7 @@ function BigSquare(props) {
   const [greenLight,setGreenLight]=useState(false);
   const [redLight,setRedLight]=useState(false);
   const [correctIndex,setCorrectIndex]=useState([]);
+  console.log(correctIndex)
   useEffect(() => {
     setRandmoSquares(() => shuffle(squares))
     setRandmoSquares1(() => shuffle(squares))
@@ -43,6 +44,8 @@ function BigSquare(props) {
     // alert(val)
   if(state=="qindex")
   { 
+    console.log(val);
+
     setQIndex(val);
     setGreenLight(false);
     setRedLight(false);
@@ -50,6 +53,7 @@ function BigSquare(props) {
   }
   else 
   {
+    console.log(val);
     setAIndex(val);
     setGreenLight(false);
     setRedLight(false);
@@ -156,7 +160,7 @@ function BigSquare(props) {
       {randomSquares.map((e, i) => {
         return (
           // <View key={e} style={{padding:5}}>
-            <SmallSquare value={e} imgUrl={props.route.params.gameAttr[0].game_attr[e]} clickHandler={moveSquare}/>
+            <SmallSquare value={e} imgUrl={props.route.params.gameAttr[0].game_attr[e]} clickHandler={moveSquare} press={qindex} correctIndex={correctIndex}/>
           // </View>
         );
       })}
@@ -168,7 +172,7 @@ function BigSquare(props) {
       {randomSquares1.map((e, i) => {
         return (
           // <View key={e} style={{padding:5}}>
-            <DropSquare value={e} imgUrl={props.route.params.gameAttr[0].game_attr[e]} clickHandler={moveSquare}/>
+            <DropSquare value={e} imgUrl={props.route.params.gameAttr[0].game_attr[e]} clickHandler={moveSquare} press={aindex} correctIndex={correctIndex}/>
             // </View>
         );
       })}

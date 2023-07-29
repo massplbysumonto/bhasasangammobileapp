@@ -78,7 +78,7 @@ const Register = (props) => {
   return (
     <>
    
-    <SafeAreaView style={{paddingVertical: 15,paddingHorizontal: 15,}}>
+    <SafeAreaView style={{paddingVertical: 15,paddingHorizontal: 15, backgroundColor: '#F8E7D3'}}>
     <ScrollView style={{height: Dimensions.get('window').height-30}}>
       <View style={styles.container}>
     <View style={styles.logoContainers}>
